@@ -1,1 +1,5 @@
-# pattern-examples
+# Test project patterns-examples
+======================================
+
+Реализация тестового проекта на spring-boot для просмотра принципов работы и возможностей spring-boot
+
