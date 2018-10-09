@@ -6,7 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskGenerator {
-    private final static Map<String, List> tasksMap = new HashMap<>();
+    private static final Map<String, List> tasksMap = new HashMap<>();
+
+    public TaskGenerator() {
+        throw new IllegalStateException("Utility class");
+    }
 
     static {
         List<Task> tempList = new ArrayList();
@@ -15,9 +19,9 @@ public class TaskGenerator {
     }
 
     public static List<Task> getTasksByPurpose(Purpose purpose) {
-        if (purpose.getPriority() == Priority.LOW) {
+        if (Priority.LOW.equals(purpose.getPriority())) {
             // TODO: Not realize
-            return null;
+            return new ArrayList<>();
         } else {
             return tasksMap.get(purpose.getKeyName());
         }
