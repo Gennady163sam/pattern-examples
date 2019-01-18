@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nexign.model.db.Purpose" table="purposes">
+        <id name="purposeId" type="int">
+            <column name="purp_id" />
+            <generator class="increment"/>
+        </id>
+        <property name="description" type="java.lang.String">
+            <column name="purp_description" />
+        </property>
+        <property name="startDate" type="java.util.Date">
+            <column name="purp_date_start" />
+        </property>
+        <property name="requirementDate" type="java.util.Date">
+            <column name="purp_req_date" />
+        </property>
+    </class>
+</hibernate-mapping>

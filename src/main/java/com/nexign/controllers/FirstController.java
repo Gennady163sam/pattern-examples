@@ -38,12 +38,12 @@ public class FirstController {
     @RequestMapping("/patterns/builder")
     @ResponseBody
     PatternBuilder getBuilder() {
-        StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("Порождающий паттерн проектирования, который позволяет создавать сложные объекты пошагово.")
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Порождающий паттерн проектирования, который позволяет создавать сложные объекты пошагово.")
                 .append(" Строитель даёт возможность использовать один и тот же код строительства для получения ")
                 .append("разных представлений объектов");
         return new PatternBuilder()
                 .setName("Builder")
-                .setDescription(stringBuffer.toString());
+                .setDescription(stringBuilder.toString());
     }
 }

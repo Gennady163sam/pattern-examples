@@ -8,7 +8,7 @@ import java.util.Map;
 public class TaskGenerator {
     private static final Map<String, List> tasksMap = new HashMap<>();
 
-    public TaskGenerator() {
+    private TaskGenerator() {
         throw new IllegalStateException("Utility class");
     }
 
