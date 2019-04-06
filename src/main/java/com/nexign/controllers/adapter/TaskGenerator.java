@@ -5,15 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TaskGenerator {
-    private static final Map<String, List> tasksMap = new HashMap<>();
+public final class TaskGenerator {
+    private static final Map<String, List<Task>> tasksMap = new HashMap<>();
 
     private TaskGenerator() {
         throw new IllegalStateException("Utility class");
     }
 
     static {
-        List<Task> tempList = new ArrayList();
+        List<Task> tempList = new ArrayList<>();
         tempList.add(new Task());
         tasksMap.put("MY_TASKS", tempList);
     }

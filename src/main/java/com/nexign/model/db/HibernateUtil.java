@@ -6,7 +6,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
-
     //XML based configuration
     private static SessionFactory sessionFactory;
 

@@ -10,7 +10,7 @@ public class PostgreSQLJDBC {
     private static final String USER = "AppUser";
     private static final String PASS = "1111";
 
-    public static void main(String[] argv) {
+    /*public static void main(String[] argv) {
 
         System.err.println("Testing connection to PostgreSQL JDBC");
 
@@ -38,5 +38,5 @@ public class PostgreSQLJDBC {
         } else {
             System.err.println("Failed to make connection to database");
         }
-    }
+    }*/
 }
