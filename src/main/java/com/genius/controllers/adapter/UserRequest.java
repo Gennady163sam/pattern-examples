@@ -1,4 +1,4 @@
-package com.nexign.controllers.adapter;
+package com.genius.controllers.adapter;
 
 public class UserRequest {
     private String searchPurpose;

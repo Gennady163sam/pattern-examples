@@ -1,17 +1,9 @@
-package com.nexign.controllers.adapter;
+package com.genius.controllers.adapter;
 
-public class Task {
-    private int id;
+public class Purpose {
     private String keyName;
     private String description;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private Priority priority;
 
     public String getKeyName() {
         return keyName;
@@ -28,4 +20,13 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
 }

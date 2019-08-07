@@ -1,6 +1,6 @@
 package test;
 
-import com.nexign.services.PatternService;
+import com.genius.services.PatternService;
 import org.junit.Test;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;

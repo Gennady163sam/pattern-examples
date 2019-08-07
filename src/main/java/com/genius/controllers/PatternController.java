@@ -1,10 +1,10 @@
-package com.nexign.controllers;
+package com.genius.controllers;
 
-import com.nexign.controllers.adapter.Task;
-import com.nexign.controllers.adapter.TaskAdapter;
-import com.nexign.controllers.adapter.UserRequest;
-import com.nexign.model.patterns.Singleton;
-import com.nexign.model.patterns.builder.PatternBuilder;
+import com.genius.controllers.adapter.Task;
+import com.genius.controllers.adapter.TaskAdapter;
+import com.genius.controllers.adapter.UserRequest;
+import com.genius.domain.patterns.Singleton;
+import com.genius.domain.patterns.builder.PatternBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

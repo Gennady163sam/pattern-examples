@@ -1,4 +1,4 @@
-package com.nexign.controllers.adapter;
+package com.genius.controllers.adapter;
 
 import java.util.List;
 

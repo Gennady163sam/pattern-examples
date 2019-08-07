@@ -1,6 +1,9 @@
-package com.nexign.services;
+package com.genius.services;
 
-public class PatternService {
+public final class PatternService {
+
+    private PatternService() {
+    }
 
     public static void quickSort(int[] arr, int start, int end){
 
