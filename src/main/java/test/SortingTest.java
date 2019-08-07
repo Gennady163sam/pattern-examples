@@ -1,6 +1,6 @@
 package test;
 
-import com.nexign.services.PatternService;
+import com.genius.services.PatternService;
 import org.junit.Test;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
@@ -8,12 +8,15 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
 public class SortingTest {
+    private static final Logger logger = LoggerFactory.getLogger(SortingTest.class);
 
     @State(Scope.Thread)
     public static class StaticArray {
@@ -26,7 +29,7 @@ public class SortingTest {
 
         @TearDown(Level.Trial)
         public void clean() {
-            System.out.println("Clean");
+            logger.debug("Clean");
         }
     }
 
