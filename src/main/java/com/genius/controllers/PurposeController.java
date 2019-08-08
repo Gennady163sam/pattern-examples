@@ -24,8 +24,8 @@ public class PurposeController {
 
     @PostMapping
     @ResponseBody
-    Purpose createPurpose(@RequestBody PurposeDTO purpose) {
-        return purposeService.createPurpose(modelMapper.map(purpose, Purpose.class));
+    public ResponseEntity<Purpose> createPurpose(@RequestBody PurposeDTO purpose) {
+        return ResponseEntity.ok(purposeService.createPurpose(modelMapper.map(purpose, Purpose.class)));
     }
 
     @GetMapping

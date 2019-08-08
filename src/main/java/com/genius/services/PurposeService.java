@@ -23,4 +23,5 @@ public class PurposeService {
     public List<Purpose> getPurposes() {
         return purposeRepository.findAll();
     }
+
 }
