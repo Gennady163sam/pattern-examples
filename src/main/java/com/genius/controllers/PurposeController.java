@@ -2,10 +2,12 @@ package com.genius.controllers;
 
 import com.genius.domain.dto.PurposeDTO;
 import com.genius.domain.purposes.Purpose;
+import com.genius.domain.transfer.Create;
 import com.genius.services.PurposeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class PurposeController {
 
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Purpose> createPurpose(@RequestBody PurposeDTO purpose) {
+    public ResponseEntity<Purpose> createPurpose(@Validated(Create.class) @RequestBody PurposeDTO purpose) {
         return ResponseEntity.ok(purposeService.createPurpose(modelMapper.map(purpose, Purpose.class)));
     }
 
