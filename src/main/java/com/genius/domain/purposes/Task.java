@@ -17,7 +17,7 @@ public class Task implements Serializable {
     private String description;
     @Column
     private Date date;
-    @ManyToOne
-    @JoinColumn(name = "purp_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "purp_id", referencedColumnName = "purp_id")
     private Purpose purpose;
 }

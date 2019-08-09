@@ -2,10 +2,12 @@ package com.genius.controllers;
 
 import com.genius.domain.dto.TaskDTO;
 import com.genius.domain.purposes.Task;
+import com.genius.domain.transfer.Create;
 import com.genius.services.TaskService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,7 +24,7 @@ public class TaskController {
 
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Task> createTask(@RequestBody TaskDTO taskDTO) {
+    public ResponseEntity<Task> createTask(@Validated(Create.class) @RequestBody TaskDTO taskDTO) {
         return ResponseEntity.ok(taskService.createTask(modelMapper.map(taskDTO, Task.class)));
     }
 
