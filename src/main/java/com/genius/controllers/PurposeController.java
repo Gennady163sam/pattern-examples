@@ -3,6 +3,8 @@ package com.genius.controllers;
 import com.genius.domain.dto.PurposeDTO;
 import com.genius.domain.purposes.Purpose;
 import com.genius.domain.transfer.Create;
+import com.genius.domain.transfer.Update;
+import com.genius.exceptions.ApiException;
 import com.genius.services.PurposeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +34,20 @@ public class PurposeController {
     @GetMapping
     public ResponseEntity<List<Purpose>> getPurposes() {
         return ResponseEntity.ok(purposeService.getPurposes());
+    }
+
+    @DeleteMapping("/{purposeId}")
+    public void deletePurpose(@PathVariable Long purposeId) {
+        purposeService.deletePurpose(purposeId);
+    }
+
+    @PutMapping
+    public ResponseEntity<Purpose> updatePurpose(@Validated(Update.class)@RequestBody PurposeDTO purpose) {
+        return ResponseEntity.ok(purposeService.updatePurpose(modelMapper.map(purpose, Purpose.class)));
+    }
+
+    @GetMapping("/{purposeId}")
+    public ResponseEntity<Purpose> getPurposeById(@PathVariable Long purposeId) {
+        return ResponseEntity.ok(purposeService.getById(purposeId).orElseThrow(ApiException::new));
     }
 }
