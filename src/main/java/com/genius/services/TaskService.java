@@ -29,7 +29,7 @@ public class TaskService {
     }
 
     public Task updateTask(Task task) {
-        return taskRepository.save(fillAttributes(task));
+        return taskRepository.save(prepareModel(task));
     }
 
     public void deleteTask(Long taskId) {
@@ -46,7 +46,7 @@ public class TaskService {
         return taskRepository.findAllByPurpose(purpose);
     }
 
-    private Task fillAttributes(Task task) {
+    private Task prepareModel(Task task) {
         taskRepository.findById(task.getId()).ifPresent(currentTask -> {
             task.setDescription(task.getDescription() != null ? task.getDescription() : currentTask.getDescription());
             task.setDate(task.getDate() != null ? task.getDate() : currentTask.getDate());

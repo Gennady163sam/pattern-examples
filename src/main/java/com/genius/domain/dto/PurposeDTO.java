@@ -13,7 +13,6 @@ public class PurposeDTO {
     private Long purposeId;
     @NotNull(groups = Create.class)
     private String description;
-    @Null(groups = Create.class)
     private Date startDate;
     @NotNull(groups = Create.class)
     private Date requirementDate;
