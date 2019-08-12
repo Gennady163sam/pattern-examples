@@ -9,6 +9,7 @@ import com.genius.exceptions.ApiException;
 import com.genius.services.TaskService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +45,7 @@ public class TaskController {
 
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTask(@PathVariable Long taskId) {
-        return ResponseEntity.ok(taskService.getById(taskId).orElseThrow(ApiException::new));
+        return ResponseEntity.ok(taskService.getById(taskId).orElseThrow(() -> {throw new ApiException(HttpStatus.BAD_REQUEST);}));
     }
 
     @GetMapping
