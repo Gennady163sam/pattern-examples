@@ -8,6 +8,7 @@ import com.genius.exceptions.ApiException;
 import com.genius.services.PurposeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +49,6 @@ public class PurposeController {
 
     @GetMapping("/{purposeId}")
     public ResponseEntity<Purpose> getPurposeById(@PathVariable Long purposeId) {
-        return ResponseEntity.ok(purposeService.getById(purposeId).orElseThrow(ApiException::new));
+        return ResponseEntity.ok(purposeService.getById(purposeId).orElseThrow(() -> {throw new ApiException(HttpStatus.BAD_REQUEST);}));
     }
 }

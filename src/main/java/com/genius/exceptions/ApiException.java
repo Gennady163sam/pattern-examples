@@ -1,23 +1,19 @@
 package com.genius.exceptions;
 
-public class ApiException extends RuntimeException {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-    public ApiException() {
+public class ApiException extends ResponseStatusException {
+
+    public ApiException(HttpStatus status) {
+        super(status);
     }
 
-    public ApiException(String message) {
-        super(message);
+    public ApiException(HttpStatus status, String reason) {
+        super(status, reason);
     }
 
-    public ApiException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public ApiException(Throwable cause) {
-        super(cause);
-    }
-
-    public ApiException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+    public ApiException(HttpStatus status, String reason, Throwable cause) {
+        super(status, reason, cause);
     }
 }
