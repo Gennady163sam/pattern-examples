@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-purposes.yaml
+  - changeSet:
+      id: 1
+      author: AppUser
+      changes:
+        - createTable:
+            tableName: purposes
+            columns:
+              - column:
+                  name: purp_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: purp_description
+                  type: char(1024)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: purp_req_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: purp_date_start
+                  type: date
