@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-tasks.yaml
+  - changeSet:
+      id: 2
+      author: AppUser
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: char(512)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: purp_id
+                  type: integer
+        - addForeignKeyConstraint:
+            baseColumnNames: purp_id
+            baseTableName: tasks
+            constraintName: fk_task_puprpose
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: purp_id
+            referencedTableName: purposes
