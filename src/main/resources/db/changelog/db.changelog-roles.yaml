@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-tasks.yaml
+  - changeSet:
+      id: insert-role-part
+      author: AppUser
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              name: name
+              value: "admin"
+        - insert:
+            tableName: roles
+            columns:
+              name: name
+              value: "guest"
+      rollback:
+        - delete:
+            tableName: roles
+            where: name in ('admin', 'guest')

@@ -1,7 +1,7 @@
 databaseChangeLog:
   - logicalFilePath: db/changelog/db.changelog-tasks.yaml
   - changeSet:
-      id: 2
+      id: create-tasks-table
       author: AppUser
       changes:
         - createTable:

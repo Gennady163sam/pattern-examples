@@ -1,7 +1,7 @@
 databaseChangeLog:
   - logicalFilePath: db/changelog/db.changelog-purposes.yaml
   - changeSet:
-      id: 1
+      id: create-purpose-table
       author: AppUser
       changes:
         - createTable:

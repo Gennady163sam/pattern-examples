@@ -49,6 +49,6 @@ public class PurposeController {
 
     @GetMapping("/{purposeId}")
     public ResponseEntity<Purpose> getPurposeById(@PathVariable Long purposeId) {
-        return ResponseEntity.ok(purposeService.getById(purposeId).<ApiException>orElseThrow(() -> {throw new ApiException(HttpStatus.BAD_REQUEST);}));
+        return ResponseEntity.ok(purposeService.getById(purposeId).orElseThrow(() -> new ApiException(HttpStatus.BAD_REQUEST)));
     }
 }
