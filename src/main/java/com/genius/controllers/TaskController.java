@@ -45,7 +45,7 @@ public class TaskController {
 
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTask(@PathVariable Long taskId) {
-        return ResponseEntity.ok(taskService.getById(taskId).<ApiException>orElseThrow(() -> {throw new ApiException(HttpStatus.BAD_REQUEST);}));
+        return ResponseEntity.ok(taskService.getById(taskId).orElseThrow(() -> new ApiException(HttpStatus.BAD_REQUEST)));
     }
 
     @GetMapping

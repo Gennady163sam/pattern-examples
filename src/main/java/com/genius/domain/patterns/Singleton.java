@@ -3,7 +3,7 @@ package com.genius.domain.patterns;
 public class Singleton extends Pattern {
     private static Singleton singleton;
 
-    public Singleton() {
+    private Singleton() {
         this.setName("I'm a singleton!");
     }
 

@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-users.yaml
+  - changeSet:
+      id: create-users-tables
+      author: AppUser
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: user_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: char(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: char(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: create_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: char(256)
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: role_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: char(64)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: user_roles
+            columns:
+              - column:
+                  name: ur_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_user_id
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_role_id
+                  type: integer
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames: user_user_id
+            baseTableName: user_roles
+            constraintName: fk_ur_user
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: user_id
+            referencedTableName: users
+        - addForeignKeyConstraint:
+            baseColumnNames: role_role_id
+            baseTableName: user_roles
+            constraintName: fk_ur_role
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: role_id
+            referencedTableName: roles
