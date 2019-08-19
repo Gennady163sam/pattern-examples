@@ -16,6 +16,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+  * This class consists CRUD REST API for entity Task
+  *
+  * @author  Gennady Savinov
+  * @see     TaskService
+  */
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
