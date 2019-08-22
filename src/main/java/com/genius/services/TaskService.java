@@ -11,6 +11,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class consists API for entity Task
+ *
+ * @author  Gennady Savinov
+ * @see     TaskRepository
+ * @see     PurposeRepository
+ */
 @Service
 public class TaskService {
     private TaskRepository taskRepository;
