@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class consists API for entity Purpose
+ *
+ * @author  Gennady Savinov
+ * @see     PurposeRepository
+ */
 @Service("purposeService")
 public class PurposeService {
     private PurposeRepository purposeRepository;

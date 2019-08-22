@@ -6,6 +6,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * This class consists API for entity User
+ *
+ * @author  Gennady Savinov
+ * @see     UserRepository
+ */
 @Service
 public class UserService {
     private UserRepository userRepository;

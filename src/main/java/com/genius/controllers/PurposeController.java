@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * This class consists CRUD REST API for entity Purpose
+ *
+ * @author  Gennady Savinov
+ * @see     PurposeService
+ */
 @RestController
 @RequestMapping(value = "/purposes")
 public class PurposeController {

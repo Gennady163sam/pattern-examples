@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+/**
+ * This class consists CRUD REST API for entity User
+ *
+ * @author  Gennady Savinov
+ * @see     UserService
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
