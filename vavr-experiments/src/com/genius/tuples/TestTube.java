@@ -17,4 +17,11 @@ public class TestTube {
     public TestTube(String ingrName, int volume) {
         mainIngredient = Tuple.of(ingrName, volume);
     }
+
+    public static TestTube lowerConcentration(TestTube tube) {
+        return new TestTube(Tuple.of(
+                tube.getMainIngredient()._1,
+                tube.getMainIngredient()._2 / 2
+        ));
+    }
 }
